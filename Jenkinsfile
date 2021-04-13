@@ -13,9 +13,9 @@ pipeline {
       }
     }
 
-    stage('start') {
+    stage('deploy') {
       steps {
-        sh 'java -jar target/*.jar'
+        sh 'cp ~/deploy.yml ./deploy-playbook.yml && cp ~/Dockerfile ./  &&    ansible-playbook deploy-playbook.yml ; rm deploy-playbook.yml'
       }
     }
 
