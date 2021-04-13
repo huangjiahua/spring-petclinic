@@ -9,7 +9,7 @@ pipeline {
 
     stage('analysis') {
       steps {
-        sh 'mvn sonar:sonar -Dsonar.projectKey=org.springframework.samples:spring-petclinic -Dsonar.host.url=http://localhost:9000 -Dsonar.login=14bb09599f62775efce8c5ebebdace2f8c7b4ccb'
+        sh 'mvn sonar:sonar -Dsonar.projectKey=org.springframework.samples:spring-petclinic -Dsonar.host.url=http://localhost:9000 -Dsonar.login=98ee5b2481848a8f0a2eebe3885addd4d2939db2'
       }
     }
 
