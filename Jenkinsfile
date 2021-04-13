@@ -9,13 +9,13 @@ pipeline {
 
     stage('analysis') {
       steps {
-        sh 'mvn sonar:sonar -Dsonar.projectKey=org.springframework.samples:spring-petclinic -Dsonar.host.url=http://localhost:9000 -Dsonar.login=98ee5b2481848a8f0a2eebe3885addd4d2939db2'
+        sh 'mvn sonar:sonar -Dsonar.projectKey=org.springframework.samples:spring-petclinic -Dsonar.host.url=http://localhost:9000 -Dsonar.login=b0b4e4adfcb6f18f4b6f30623ce56ea9c8a44b63'
       }
     }
 
     stage('deploy') {
       steps {
-        sh 'cp /home/vagrant/deploy.yml ./deploy-playbook.yml && cp /home/vagrant/Dockerfile ./  &&    ansible-playbook --user=vagrant deploy-playbook.yml ; rm deploy-playbook.yml'
+        sh 'cp /home/vagrant/deploy.yml ./deploy-playbook.yml && ansible-playbook --user=vagrant deploy-playbook.yml ; rm deploy-playbook.yml'
       }
     }
 
